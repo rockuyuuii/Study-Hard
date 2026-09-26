@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ff69a8"><link rel="manifest" href="manifest.json"><title>Nanu loves Butu 🧿❤️‍🩹</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#fff7fb;color:#4a2639}.app{max-width:1000px;margin:auto;padding-bottom:30px}header{position:sticky;top:0;z-index:5;background:#fff8fcf2;backdrop-filter:blur(12px);border-bottom:1px solid #f5d6e4}.top{padding:16px;display:flex;justify-content:space-between}.brand h1{margin:0;color:#8a2858;font-size:23px}.brand p{margin:3px 0;color:#9b7889;font-size:12px}nav{display:flex;gap:6px;overflow:auto;padding:0 10px 10px}nav button{white-space:nowrap;border:1px solid #f0cbdc;background:white;color:#7d3156;padding:9px 12px;border-radius:20px}nav button.active{background:#ff69a8;color:white}.view{display:none;padding:16px}.view.active{display:block}.card{background:#fff;border:1px solid #f2d8e4;border-radius:20px;padding:16px;margin-bottom:14px;box-shadow:0 8px 25px #c65b8d12}.hero{background:linear-gradient(135deg,#ff72ae,#d84e96);color:white;border:0}.hero h2{margin:0 0 7px}.hero p{line-height:1.5}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#fff7fb;border:1px solid #f4d8e5;border-radius:16px;padding:12px}.stat b{font-size:22px;color:#842953;display:block}.stat small{color:#977486}.btn{border:0;background:#ff69a8;color:#fff;padding:10px 13px;border-radius:12px}.btn.alt{background:white;color:#842953;border:1px solid #edc8da}.actions{display:flex;gap:8px;flex-wrap:wrap}.progress{height:10px;background:#f4e1ea;border-radius:20px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#ff69a8,#ffb7d4)}.date{display:flex;justify-content:space-between;align-items:center;gap:8px}.date button{border:1px solid #efcbdc;background:#fff;border-radius:10px;padding:8px}.target{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #f4e3ea}.target:last-child{border:0}.check{width:28px;height:28px;border:2px solid #e5b5cb;background:white;border-radius:9px;color:white}.check.done{background:#48b889;border-color:#48b889}.done .name{text-decoration:line-through;color:#a58b98}.meta{font-size:11px;color:#9a7889}.qty{text-align:right;font-weight:700;color:#7d3156}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}label{display:block;font-size:12px;color:#967486;margin-bottom:4px}input,select,textarea{width:100%;padding:10px;border:1px solid #e9cad9;border-radius:11px;background:white;color:#4a2639}.bar{display:grid;grid-template-columns:105px 1fr 45px;gap:8px;align-items:center;margin:10px 0;font-size:12px}.bar div{height:11px;background:#f3e1ea;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:#ff72ae}.badge{display:inline-block;padding:7px 10px;border-radius:99px;background:#ffe1ee;color:#7d3156;font-size:12px;margin:3px}.quote{background:#fff0f7;border-left:4px solid #ff69a8;padding:12px;border-radius:10px}.modal{position:fixed;inset:0;background:#32132499;z-index:20;display:none;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.box{background:white;border-radius:22px;padding:18px;width:min(620px,100%);max-height:90vh;overflow:auto}.toast{position:fixed;z-index:30;left:50%;bottom:18px;transform:translate(-50%,120px);background:#482337;color:#fff;padding:12px 18px;border-radius:30px;transition:.25s;text-align:center}.toast.show{transform:translate(-50%,0)}#confetti{position:fixed;inset:0;pointer-events:none;z-index:25;overflow:hidden}.piece{position:absolute;top:-20px;width:8px;height:14px;animation:fall 1.4s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(700deg)}}@media(max-width:650px){.grid,.form{grid-template-columns:1fr}.full{grid-column:auto}.bar{grid-template-columns:85px 1fr 40px}}
+
+/* Love gate shown on EVERY app opening */
+#loveGate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at top,#ffd9e9,#fff7fb 58%,#ffe7f1);overflow:hidden}
+.gate-card{width:min(560px,100%);background:#fff;border:1px solid #f2c8da;border-radius:30px;padding:28px 20px;box-shadow:0 25px 70px #b83d781c;text-align:center;position:relative}
+.gate-heart{font-size:54px;animation:gateFloat 2s ease-in-out infinite}
+.gate-card h1{color:#8a2858;margin:8px 0 5px;font-size:28px}
+.gate-card p{color:#977486;margin:0 0 20px}
+.gate-question{font-size:20px;font-weight:800;color:#5b2943;margin:12px 0 17px}
+.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.answer{background:#fff7fb;border:2px solid #f0c6d9;color:#7d3156;border-radius:18px;padding:15px;font-weight:800;font-size:16px;transition:.2s;box-shadow:0 5px 14px #c65b8d10}
+.answer:active{transform:scale(.96)}
+#gateMessage{min-height:70px;margin-top:18px;border-radius:18px;padding:13px;display:none;font-weight:750;line-height:1.45}
+#gateMessage.show{display:block}
+.gate-wrong{background:#fff0f0;color:#9b293d;border:1px solid #f3b6c0;animation:angerShake .55s ease}
+.gate-right{background:#fff0f7;color:#8a2858;border:1px solid #f3c2d8;animation:lovePulse 1s ease}
+.gate-lock{font-size:12px;color:#a17e90;margin-top:12px}
+.anger-face{font-size:52px;display:block;animation:angerPop .55s ease}
+.love-face{font-size:52px;display:block;animation:lovePop .8s ease}
+@keyframes angerShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-7px)}80%{transform:translateX(7px)}}
+@keyframes angerPop{0%{transform:scale(.4) rotate(-15deg);opacity:.2}60%{transform:scale(1.2) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes lovePulse{0%{transform:scale(.92);opacity:.5}45%{transform:scale(1.04);opacity:1}100%{transform:scale(1)}}
+@keyframes lovePop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.25)}100%{transform:scale(1)}}
+@keyframes gateFloat{50%{transform:translateY(-7px)}}
+@media(max-width:650px){.answer-grid{grid-template-columns:1fr 1fr}.gate-card{padding:24px 15px}.gate-card h1{font-size:24px}}
+/* v3 */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:linear-gradient(135deg,#fff,#fff3f8);border:1px solid #f0d5e2;border-radius:17px;padding:12px}.kpi strong{display:block;font-size:22px;color:#812953}.kpi span{font-size:11px;color:#987789}.history-row{display:grid;grid-template-columns:80px 1fr 48px;gap:8px;align-items:center;margin:8px 0;font-size:12px}.meter{height:8px;background:#f1e0e8;border-radius:99px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,#ff69a8,#ffb8d5)}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.habit{display:flex;align-items:center;gap:8px;padding:10px;background:#fff8fb;border:1px solid #f0dbe5;border-radius:12px}.habit input{width:18px}.pill{padding:5px 8px;border-radius:999px;background:#ffe1ee;color:#7d3156;font-size:11px}@media(max-width:650px){.kpi-grid{grid-template-columns:1fr 1fr}.checklist{grid-template-columns:1fr}}
+
+/* v4 feature UI */
+.focus-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px}.focus-time{font-size:46px;font-weight:850;text-align:center;color:#842953;padding:8px}.ring{width:150px;height:150px;border-radius:50%;margin:10px auto;display:grid;place-items:center;background:conic-gradient(#ff69a8 var(--pct),#f4e1ea 0)}.ring:after{content:"";width:118px;height:118px;border-radius:50%;background:#fff;grid-area:1/1}.ring span{grid-area:1/1;z-index:1;font-weight:800;color:#842953}.mission{background:linear-gradient(135deg,#fff0f7,#fff);border:1px solid #f3cfdf;border-radius:18px;padding:14px}.xpbar{height:12px;background:#f2e1ea;border-radius:99px;overflow:hidden}.xpbar i{display:block;height:100%;background:linear-gradient(90deg,#ff69a8,#f5b83d)}.heatmap{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.heat{aspect-ratio:1;border-radius:5px;background:#f3e4eb}.heat[data-l="1"]{background:#ffd1e2}.heat[data-l="2"]{background:#ff9fc5}.heat[data-l="3"]{background:#ff69a8}.heat[data-l="4"]{background:#d84791}.toast.success{background:#2d6b52}.danger{color:#a52d49}.muted{color:#9a7889;font-size:12px}.rank{font-size:14px;font-weight:750;color:#842953}.focus-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}@media(max-width:650px){.focus-wrap{grid-template-columns:1fr}}
+</style></head><body>
+<div id="loveGate">
+  <div class="gate-card">
+    <div class="gate-heart">🧿🩷</div>
+    <h1>Nanu loves Butu</h1>
+    <p>A tiny entrance question before your study world opens.</p>
+    <div class="gate-question">Nanu loves Butu how much?</div>
+    <div class="answer-grid">
+      <button class="answer" onclick="loveAnswer('A')">A) 100%</button>
+      <button class="answer" onclick="loveAnswer('B')">B) 200%</button>
+      <button class="answer" onclick="loveAnswer('C')">C) 1000%</button>
+      <button class="answer" onclick="loveAnswer('D')">D) Infinity ♾️</button>
+    </div>
+    <div id="gateMessage"></div>
+    <div class="gate-lock">Choose carefully, Botai. 🧿</div>
+  </div>
+</div>
+<div class="app"><header><div class="top"><div class="brand"><h1>Nanu loves Butu 🧿❤️‍🩹</h1><p>RRB Nurse • one day at a time</p></div><b style="font-size:27px">🩷</b></div><nav id="nav"></nav></header>
+<main><section id="home" class="view active"></section><section id="daily" class="view"></section><section id="goals" class="view"></section><section id="progress" class="view"></section><section id="rewards" class="view"></section><section id="analytics" class="view"></section><section id="planner" class="view"></section><section id="habits" class="view"></section><section id="focus" class="view"></section><section id="insights" class="view"></section><section id="settings" class="view"></section></main></div><div id="modal" class="modal"><div id="box" class="box"></div></div><div id="toast" class="toast"></div><div id="confetti"></div>
+<script>
+const SEC=["Revisions","Videos","MCQs","PYQs","Mock Test","Self Study","Non Nursing","Backlog Videos"],SUB=["MSN","Fundamentals","OBG","Community","Pharmacology","MHN","Pedia","Non Nursing","Other"],KEY="nanu-butu-v1";
+let D=JSON.parse(localStorage.getItem(KEY)||"null")||{targets:{},goals:{},points:0,badges:[],name:"Butu",deadline:"",note:"",habits:{},customSubjects:[],focus:{running:false,seconds:1500,mode:"Focus"},dailyReward:0,streakFreeze:0},day=new Date().toISOString().slice(0,10);
+const save=()=>localStorage.setItem(KEY,JSON.stringify(D)), A=k=>(D.targets[k]||(D.targets[k]=[])), esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function pretty(k){return new Date(k+"T12:00:00").toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"short"})}
+function go(id){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x.dataset.v==id));render()}
+function nav(){let x=[["home","🏠 Home"],["daily","🌸 Daily"],["goals","🎯 Goals"],["progress","📈 Progress"],["rewards","🏆 Rewards"],["analytics","📊 Stats"],["planner","🗓️ Planner"],["habits","🌱 Habits"],["focus","⏱️ Focus"],["insights","💡 Insights"],["settings","⚙️ Settings"]];nav.innerHTML=x.map(a=>`<button data-v="${a[0]}" onclick="go('${a[0]}')">${a[1]}</button>`).join("")}
+function toast(s){let t=document.getElementById("toast");t.textContent=s;t.classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove("show"),2400)}
+function celebrate(s){let c=document.getElementById("confetti");c.innerHTML="";for(let i=0;i<45;i++){let p=document.createElement("i");p.className="piece";p.style.left=Math.random()*100+"%";p.style.background=["#ff69a8","#ffc0dc","#f3b73f","#65c99c","#b18cff"][i%5];p.style.animationDelay=Math.random()*.3+"s";c.appendChild(p)}setTimeout(()=>c.innerHTML="",1600);toast(s)}
+function streak(){let n=0,d=new Date();while(n<366){let k=d.toISOString().slice(0,10),a=D.targets[k]||[];if(!a.length||!a.every(x=>x.done))break;n++;d.setDate(d.getDate()-1)}return n}
+function points(t){return Math.max(5,(+t.qty||1)*2)}
+function toggle(i){let t=A(day)[i];t.done=!t.done;if(t.done){D.points+=points(t);check();save();celebrate(["Target complete! You are moving forward. 🩷","Beautiful work, Butu. One more step. 🌷","RRB dream: one tick at a time. 🩺✨"][Math.floor(Math.random()*3)])}else{D.points=Math.max(0,D.points-points(t));save();toast("Target unchecked.");}render();if(A(day).length&&A(day).every(x=>x.done))setTimeout(()=>celebrate("🎉 DAILY GOAL COMPLETE! Rest, reset and push again tomorrow. 🧿❤️‍🩹"),250)}
+function check(){let b=D.badges,p=D.points;[["first","🌱 First Step",p>=5],["ten","🌷 10 Wins",p>=50],["hundred","💗 100 Points",p>=100],["five","👑 500 Points",p>=500],["streak","🔥 7-Day Streak",streak()>=7]].forEach(x=>{if(x[2]&&!b.includes(x[0])){b.push(x[0]);toast("Reward unlocked: "+x[1])}})}
+function targetHTML(t,i){return `<div class="target ${t.done?"done":""}"><button class="check ${t.done?"done":""}" onclick="toggle(${i})">${t.done?"✓":""}</button><div><b class="name">${esc(t.name)}</b><div class="meta">${esc(t.section)} • ${esc((t.subjects||[t.subject||"Other"]).join(", "))}${t.topic?" • "+esc(t.topic):""}${t.type?" • "+esc(t.type):""} <span class="pill">${esc(t.priority||"Normal")}</span></div></div><div class="qty">${esc(t.qty)} ${esc(t.unit)}<br><button style="border:0;background:none;color:#b24a7b" onclick="edit(${i})">edit</button> <button style="border:0;background:none;color:#b24a7b" onclick="del(${i})">×</button></div></div>`}
+
+function levelInfo(){let xp=D.points||0,level=Math.floor(xp/100)+1,inside=xp%100;return{level,inside,next:100}}
+function awardDailyReward(){let k=new Date().toISOString().slice(0,10);if(D.dailyReward===k)return;let a=D.targets[k]||[];if(a.length&&a.every(x=>x.done)){D.points+=25;D.dailyReward=k;save();celebrate("🎁 Daily bonus +25 Love Points! You completed everything today.");}}
+function setTodayReward(){awardDailyReward()}
+function renderHome(){let a=A(day),d=a.filter(x=>x.done).length,p=a.length?Math.round(d/a.length*100):0;home.innerHTML=`<div class="card hero"><h2>Hi ${esc(D.name)} 🩷</h2><p>Small daily wins become the RRB result. Build today, then repeat.</p><div class="actions"><button class="btn" onclick="go('daily')">Start today's mission →</button><button class="btn alt" onclick="add()">＋ Add target</button></div></div><div class="kpi-grid"><div class="kpi"><strong>Lv ${levelInfo().level}</strong><span>Study level</span></div><div class="kpi"><strong>${D.points}</strong><span>Love Points</span></div></div><div class="grid"><div class="stat"><b>${d}/${a.length}</b><small>Today's targets</small></div><div class="stat"><b>${p}%</b><small>Completion</small></div><div class="stat"><b>${D.points}</b><small>Love Points 💗</small></div></div><div class="card"><h3>Today • ${pretty(day)}</h3><div class="progress"><i style="width:${p}%"></i></div><p class="meta">${p==100&&a.length?"Daily mission complete 🎉":"Every tick is progress."}</p></div><div class="card"><h3>Quick study tools</h3><div class="actions"><button class="btn" onclick="go('focus')">⏱️ Focus session</button><button class="btn alt" onclick="go('insights')">💡 See insights</button><button class="btn alt" onclick="go('habits')">🌱 Habits</button></div></div><div class="card"><h3>Ultimate goals</h3><div class="quote">${esc(Object.values(D.goals).filter(x=>x.ultimate).map(x=>x.ultimate).join(" • ")||"Set an ultimate goal in Goals.")}</div></div>`}
+function renderDaily(){let a=A(day),d=a.filter(x=>x.done).length,p=a.length?Math.round(d/a.length*100):0;daily.innerHTML=`<div class="card"><div class="date"><button onclick="move(-1)">←</button><b>${pretty(day)}</b><button onclick="move(1)">→</button></div><div class="actions" style="margin-top:10px"><button class="btn alt" onclick="today()">Today</button><button class="btn" onclick="add()">＋ Add target</button><button class="btn alt" onclick="copy()">Copy day →</button></div></div><div class="card"><h3>Daily mission <span class="badge">${d}/${a.length}</span></h3><div class="progress"><i style="width:${p}%"></i></div></div><div class="card">${a.length?a.map(targetHTML).join(""):`<div class="quote">No targets yet. Add your Videos, MCQs, PYQs, revision, mock, self-study, non-nursing or backlog target.</div>`}</div>`}
+function move(n){let d=new Date(day+"T12:00:00");d.setDate(d.getDate()+n);day=d.toISOString().slice(0,10);render()}function today(){day=new Date().toISOString().slice(0,10);render()}function copy(){let d=new Date(day+"T12:00:00");d.setDate(d.getDate()+1);let k=d.toISOString().slice(0,10);D.targets[k]=A(day).map(x=>({...x,done:false}));save();toast("Copied to "+pretty(k))}
+function modal(s){box.innerHTML=s;modalEl().classList.add("show")}function modalEl(){return document.getElementById("modal")}function closeM(){modalEl().classList.remove("show")}
+function add(idx=null){
+ let t=idx===null?{name:"",section:"Videos",subjects:["MSN"],topic:"",qty:1,unit:"done",done:false,type:"",priority:"Normal"}:A(day)[idx];
+ let subs=[...SUB,...(D.customSubjects||[])];
+ modal(`<h2>${idx===null?"Add":"Edit"} daily target</h2><div class="form">
+ <div class="full"><label>Target name</label><input id="n" value="${esc(t.name)}" placeholder="e.g. Cardiology MCQs"></div>
+ <div><label>Section</label><select id="s">${SEC.map(x=>`<option ${x==t.section?"selected":""}>${x}</option>`).join("")}</select></div>
+ <div><label>Task / MCQ type</label><input id="typ" value="${esc(t.type||"")}" placeholder="PYQ / Topic MCQ / Revision"></div>
+ <div class="full"><label>Subjects — multiple allowed</label><select id="subs" multiple size="5">${subs.map(x=>`<option ${((t.subjects||[t.subject||"MSN"]).includes(x))?"selected":""}>${x}</option>`).join("")}</select><small class="meta">Use the phone's multi-select control to choose more than one.</small></div>
+ <div><label>Topic</label><input id="top" value="${esc(t.topic)}" placeholder="e.g. Cardiology"></div>
+ <div><label>Quantity</label><input id="q" type="number" min="1" value="${t.qty||1}"></div>
+ <div><label>Unit</label><select id="u">${["done","videos","MCQs","PYQs","hours","tests","chapters","questions"].map(x=>`<option ${x==t.unit?"selected":""}>${x}</option>`).join("")}</select></div>
+ <div><label>Priority</label><select id="pri">${["Low","Normal","High","Critical"].map(x=>`<option ${x===(t.priority||"Normal")?"selected":""}>${x}</option>`).join("")}</select></div></div>
+ <div class="actions" style="margin-top:14px"><button class="btn" onclick="saveT(${idx===null?"null":idx})">Save target</button><button class="btn alt" onclick="closeM()">Cancel</button></div>`)
+}
+function edit(i){add(i)}function saveT(i){
+ let subjects=[...document.getElementById("subs").selectedOptions].map(o=>o.value);
+ let t={name:document.getElementById("n").value.trim()||"Study target",section:document.getElementById("s").value,subjects:subjects.length?subjects:["Other"],topic:document.getElementById("top").value.trim(),qty:Math.max(1,+document.getElementById("q").value||1),unit:document.getElementById("u").value,priority:document.getElementById("pri").value,type:document.getElementById("typ").value.trim(),done:false};
+ t.subject=t.subjects[0];
+ if(i!==null){t.done=A(day)[i].done;A(day)[i]=t}else A(day).push(t);
+ save();closeM();toast("Daily target saved successfully.");render()
+}
+function del(i){if(confirm("Delete this target?")){A(day).splice(i,1);save();render()}}
+function renderGoals(){goals.innerHTML=`<div class="card hero"><h2>🎯 Ultimate goals</h2><p>Set the destination, then use Daily to create small targets.</p></div>`+SEC.map(s=>{let g=D.goals[s]||{};let id=s.replace(/\W/g,"_");return `<div class="card"><h3>${s} <span class="badge">${g.ultimate?"set":"not set"}</span></h3><label>Ultimate goal</label><input id="g_${id}" value="${esc(g.ultimate||"")}" placeholder="e.g. Finish all ${s.toLowerCase()}"><div class="form" style="margin-top:9px"><div><label>Subject</label><select id="gs_${id}">${SUB.map(x=>`<option ${x===(g.subject||"MSN")?"selected":""}>${x}</option>`).join("")}</select></div><div><label>Topic/focus</label><input id="gt_${id}" value="${esc(g.topic||"")}" placeholder="Topic focus"></div></div><div class="actions" style="margin-top:10px"><button class="btn" onclick="goalSave('${s}','${id}')">Save goal</button><button class="btn alt" onclick="addFor('${s}')">＋ Daily target</button></div></div>`}).join("")}
+function goalSave(s,id){D.goals[s]={ultimate:document.getElementById("g_"+id).value,subject:document.getElementById("gs_"+id).value,topic:document.getElementById("gt_"+id).value};save();toast(s+" goal saved.");render()}function addFor(s){add();setTimeout(()=>document.getElementById("s").value=s)}
+function renderProgress(){let ks=Object.keys(D.targets).sort().slice(-14),vals=ks.map(k=>({k,n:(D.targets[k]||[]).filter(x=>x.done).length})),mx=Math.max(1,...vals.map(x=>x.n));progress.innerHTML=`<div class="card"><h2>📈 Progress</h2><p class="meta">Completed daily targets over your logged days.</p><svg width="100%" viewBox="0 0 700 230" style="background:#fffafd;border:1px solid #f2dce7;border-radius:16px">${chart(vals,mx)}</svg></div><div class="card"><h3>Section progression</h3>${SEC.map(s=>bar(s,vals=>{})).join("")}</div><div class="card"><h3>Subject progression</h3>${SUB.map(s=>bar(s)).join("")}</div>`}
+function bar(name){let n=0,d=0;Object.values(D.targets).forEach(a=>a.forEach(t=>{if(t.section===name||(t.subjects||[t.subject]).includes(name)){n++;if(t.done)d++}}));let p=n?Math.round(d/n*100):0;return `<div class="bar"><span>${name}</span><div><i style="width:${p}%"></i></div><b>${p}%</b></div>`}
+function chart(v,m){if(!v.length)return `<text x="350" y="120" text-anchor="middle" fill="#98778a">Complete some daily targets to build your chart.</text>`;let pts=v.map((x,i)=>`${20+i*(660/Math.max(1,v.length-1))},${205-(x.n/m)*170}`).join(" ");return `<polyline points="${pts}" fill="none" stroke="#ff69a8" stroke-width="4"/>`+v.map((x,i)=>{let X=20+i*(660/Math.max(1,v.length-1)),Y=205-(x.n/m)*170;return `<circle cx="${X}" cy="${Y}" r="5" fill="#ff69a8"/><text x="${X}" y="${Y-9}" text-anchor="middle" font-size="11" fill="#7d3156">${x.n}</text><text x="${X}" y="223" text-anchor="middle" font-size="9" fill="#98778a">${x.k.slice(5)}</text>`}).join("")}
+function renderRewards(){let b=[["first","🌱 First Step"],["ten","🌷 10 Wins"],["hundred","💗 100 Points"],["five","👑 500 Points"],["streak","🔥 7-Day Streak"]];rewards.innerHTML=`<div class="card hero"><h2>🏆 Reward room</h2><p>Points, badges and compliments for pushing forward.</p><div class="stat"><b>${D.points}</b><small>Love Points</small></div></div><div class="card"><h3>Badges</h3>${b.map(x=>`<span class="badge" style="opacity:${D.badges.includes(x[0])?1:.4}">${x[1]}</span>`).join("")}</div><div class="card"><h3>Compliment 💌</h3><div class="quote">${D.points>=500?"500+ points. Your consistency is becoming your strength. 👑":D.points>=100?"100+ points. Keep stacking disciplined days. 🌸":D.points>=50?"50+ points. Nice momentum. 🩷":"Your first win is waiting. Complete one target today."}</div></div>`}
+
+function allTargets(){return Object.values(D.targets).flat()}
+function rangeStats(kind){
+ let now=new Date(),start;
+ if(kind==="day")start=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+ else if(kind==="month")start=new Date(now.getFullYear(),now.getMonth(),1);
+ else start=new Date(now.getFullYear(),0,1);
+ let arr=[];for(let d=new Date(start);d<=now;d.setDate(d.getDate()+1)){let k=d.toISOString().slice(0,10);arr.push(...(D.targets[k]||[]))}
+ let done=arr.filter(x=>x.done);return{targets:arr.length,done:done.length,pct:arr.length?Math.round(done.length/arr.length*100):0,points:done.reduce((s,x)=>s+points(x),0)}
+}
+function statBlock(label,x){return `<div style="margin:12px 0"><b>${label}</b><div class="meta">${x.done} completed of ${x.targets} targets • ${x.pct}% • ${x.points} points</div><div class="meter"><i style="width:${x.pct}%"></i></div></div>`}
+function renderAnalytics(){
+ let d=rangeStats("day"),m=rangeStats("month"),y=rangeStats("year");
+ analytics.innerHTML=`<div class="card hero"><h2>📊 Strict Progress Monitor</h2><p>Daily, monthly and yearly progress based on completed targets.</p></div>
+ <div class="kpi-grid"><div class="kpi"><strong>${d.done}/${d.targets}</strong><span>Today</span></div><div class="kpi"><strong>${d.pct}%</strong><span>Today rate</span></div><div class="kpi"><strong>${m.done}</strong><span>This month</span></div><div class="kpi"><strong>${y.done}</strong><span>This year</span></div></div>
+ <div class="card"><h3>Progress periods</h3>${statBlock("Today",d)}${statBlock("This month",m)}${statBlock("This year",y)}</div>
+ <div class="card"><h3>Last 14 logged days</h3>${Object.keys(D.targets).sort().slice(-14).map(k=>{let a=D.targets[k]||[],dd=a.filter(x=>x.done).length,p=a.length?Math.round(dd/a.length*100):0;return `<div class="history-row"><span>${k.slice(5)}</span><div class="meter"><i style="width:${p}%"></i></div><b>${p}%</b></div>`}).join("")||'<p class="meta">Complete targets to build history.</p>'}</div>`
+}
+function renderPlanner(){
+ let cards=[];for(let i=0;i<7;i++){let d=new Date();d.setDate(d.getDate()+i);let k=d.toISOString().slice(0,10),a=D.targets[k]||[];cards.push(`<div class="card"><div class="section-title"><h3>${i===0?"Today":pretty(k)}</h3><span class="badge">${a.filter(x=>x.done).length}/${a.length}</span></div><div class="actions"><button class="btn alt" onclick="planDay('${k}')">Open day</button><button class="btn" onclick="addForDate('${k}')">＋ Add</button></div></div>`)}
+ planner.innerHTML=`<div class="card hero"><h2>🗓️ 7-Day Planner</h2><p>Plan ahead while keeping daily execution separate.</p></div>${cards.join("")}<div class="card"><h3>Weekly tools</h3><div class="actions"><button class="btn" onclick="repeatWeek()">Repeat today's targets for 7 days</button><button class="btn alt" onclick="clearWeek()">Clear next 7 days</button></div></div>`
+}
+function planDay(k){day=k;go("daily")}function addForDate(k){day=k;add()}
+function repeatWeek(){let base=A(new Date().toISOString().slice(0,10));for(let i=1;i<=7;i++){let d=new Date();d.setDate(d.getDate()+i);D.targets[d.toISOString().slice(0,10)]=base.map(x=>({...x,done:false}))}save();toast("Targets repeated for the next 7 days.");render()}
+function clearWeek(){if(confirm("Clear targets for the next 7 days?")){for(let i=1;i<=7;i++){let d=new Date();d.setDate(d.getDate()+i);delete D.targets[d.toISOString().slice(0,10)]}save();toast("Future targets cleared.");render()}}
+function renderHabits(){
+ let h=D.habits[day]||{};
+ habits.innerHTML=`<div class="card hero"><h2>🌱 Study Habits</h2><p>Protect the routine that makes the targets possible.</p></div><div class="card"><h3>${pretty(day)}</h3><div class="checklist">${habit("sleep","Adequate sleep 💤",h.sleep)}${habit("revision","Daily revision 📚",h.revision)}${habit("analysis","MCQ error analysis 🧠",h.analysis)}${habit("phone","Controlled phone time 📵",h.phone)}${habit("planning","Tomorrow planned 🗓️",h.planning)}</div></div><div class="card"><h3>Habit score</h3><div class="progress"><i style="width:${Object.values(h).filter(Boolean).length/5*100}%"></i></div></div>`
+}
+function habit(id,label,on){return `<label class="habit"><input type="checkbox" ${on?"checked":""} onchange="setHabit('${id}',this.checked)">${label}</label>`}
+function setHabit(id,v){D.habits[day]??={};D.habits[day][id]=v;save();toast(v?"Habit logged 🌱":"Habit unchecked");render()}
+
+let focusTimerHandle=null;
+function renderFocus(){
+ let f=D.focus||{running:false,seconds:1500,mode:"Focus"},info=levelInfo(),pct=Math.round(((1500-f.seconds)/1500)*100);
+ focus.innerHTML=`<div class="card hero"><h2>⏱️ Butu Focus Room</h2><p>One protected study block. No pressure to finish everything at once.</p></div>
+ <div class="focus-wrap"><div class="card"><h3>${f.mode}</h3><div class="ring" style="--pct:${pct}%"><span>${fmtTime(f.seconds)}</span></div><div class="focus-controls"><button class="btn" onclick="toggleFocus()">${f.running?"Pause":"Start"}</button><button class="btn alt" onclick="resetFocus()">Reset</button><button class="btn alt" onclick="focusPreset(25)">25 min</button><button class="btn alt" onclick="focusPreset(50)">50 min</button></div></div>
+ <div class="card"><h3>Focus reward</h3><div class="mission"><b>Complete a focus block</b><p class="muted">Finish the timer to earn <b>10 Love Points</b>.</p><div class="xpbar"><i style="width:${info.inside}%"></i></div><p class="rank">Level ${info.level} • ${info.inside}/100 XP to next level</p></div><div class="actions" style="margin-top:12px"><button class="btn alt" onclick="logFocus()">Log completed focus block</button></div></div></div>`;
+}
+function fmtTime(s){s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function focusPreset(min){D.focus={running:false,seconds:min*60,mode:min+" min Focus"};save();render()}
+function toggleFocus(){D.focus??={running:false,seconds:1500,mode:"25 min Focus"};D.focus.running=!D.focus.running;save();render();clearInterval(focusTimerHandle);if(D.focus.running){focusTimerHandle=setInterval(()=>{if(!D.focus.running)return;if(D.focus.seconds>0){D.focus.seconds--;save();let el=document.querySelector("#focus .ring span");if(el)el.textContent=fmtTime(D.focus.seconds)}else{D.focus.running=false;D.points+=10;save();clearInterval(focusTimerHandle);celebrate("⏱️ Focus block complete! +10 Love Points.");render()}},1000)}}
+function resetFocus(){clearInterval(focusTimerHandle);D.focus={running:false,seconds:1500,mode:"25 min Focus"};save();render()}
+function logFocus(){D.points+=10;save();celebrate("Focus block logged. +10 Love Points.");render()}
+function renderInsights(){
+ let now=new Date(),year=now.getFullYear(),days=[];
+ for(let i=0;i<70;i++){let d=new Date();d.setDate(d.getDate()-(69-i));let k=d.toISOString().slice(0,10),a=D.targets[k]||[];let n=a.filter(x=>x.done).length;days.push({k,n})}
+ let best=days.reduce((a,b)=>b.n>a.n?b:a,{n:0}),total=allTargets().length,done=allTargets().filter(x=>x.done).length;
+ let weak={};allTargets().forEach(t=>(t.subjects||[t.subject||"Other"]).forEach(s=>weak[s]=(weak[s]||0)+(t.done?0:1)));let weakList=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ insights.innerHTML=`<div class="card hero"><h2>💡 Growth Insights</h2><p>Use the data to adjust your study plan instead of guessing.</p></div>
+ <div class="card"><h3>🏅 Personal records</h3><div class="kpi-grid"><div class="kpi"><strong>${best.n}</strong><span>Best daily completions</span></div><div class="kpi"><strong>${done}</strong><span>All-time completed</span></div><div class="kpi"><strong>${total}</strong><span>All-time targets</span></div><div class="kpi"><strong>${streak()}</strong><span>Current streak</span></div></div></div>
+ <div class="card"><h3>🔥 10-week activity heatmap</h3><div class="heatmap">${days.map(x=>`<div class="heat" data-l="${Math.min(4,x.n)}" title="${x.k}: ${x.n} completed"></div>`).join("")}</div><p class="muted">Darker = more completed targets.</p></div>
+ <div class="card"><h3>🎯 Areas needing attention</h3>${weakList.length?weakList.map(x=>`<div class="history-row"><span>${esc(x[0])}</span><div class="meter"><i style="width:${Math.min(100,x[1]*10)}%"></i></div><b>${x[1]} open</b></div>`).join(""):"<p class='muted'>No unfinished targets yet.</p>"}</div>
+ <div class="card"><h3>🧠 Study recommendation</h3><div class="quote">${best.n>=5?"Your strongest recorded day shows that you can complete a substantial workload. Try reproducing the structure of that day.":done===0?"Start with one small target today; the dashboard becomes useful after a few logged days.":"Keep daily targets realistic and review unfinished targets before adding more."}</div></div>`
+}
+function renderSettings(){settings.innerHTML=`<div class="card"><h2>⚙️ Settings & Customization</h2><div class="form"><div><label>Name</label><input id="sn" value="${esc(D.name)}"></div><div><label>Ultimate deadline</label><input id="sd" type="date" value="${D.deadline}"></div><div class="full"><label>Personal note</label><textarea id="note" rows="3">${esc(D.note)}</textarea></div></div><div class="actions" style="margin-top:12px"><button class="btn" onclick="settingsSave()">Save settings</button><button class="btn alt" onclick="exportD()">⬇ Backup</button><button class="btn alt" onclick="document.getElementById('file').click()">⬆ Restore</button><input hidden id="file" type="file" accept=".json" onchange="importD(event)"></div></div>
+<div class="card"><h3>📚 Custom subjects</h3><p class="meta">Add subjects/categories to target selection.</p><div class="actions"><input id="customSub" placeholder="e.g. Current Affairs" style="max-width:260px"><button class="btn" onclick="addCustomSubject()">＋ Add</button></div><div>${(D.customSubjects||[]).map((x,i)=>`<span class="badge">${esc(x)} <button style="border:0;background:none;color:#8a2858" onclick="removeCustomSubject(${i})">×</button></span>`).join("")||'<span class="meta">No custom subjects yet.</span>'}</div></div>
+<div class="card"><h3>📲 Install</h3><p class="meta">Chrome → ⋮ → Install app / Add to Home screen.</p></div><div class="card"><h3>Reset</h3><button class="btn alt" onclick="resetD()">Reset all local data</button></div>`}
+function addCustomSubject(){let x=document.getElementById("customSub").value.trim();if(!x)return toast("Enter a subject first.");D.customSubjects??=[];if(!D.customSubjects.includes(x))D.customSubjects.push(x);save();toast("Custom subject added.");render()}
+function removeCustomSubject(i){D.customSubjects.splice(i,1);save();render()}
+function settingsSave(){D.name=sn.value.trim()||"Butu";D.deadline=sd.value;D.note=note.value;save();toast("Settings saved.");render()}function exportD(){let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(D,null,2)],{type:"application/json"}));a.download="nanu-loves-butu-backup.json";a.click()}function importD(e){let r=new FileReader;r.onload=()=>{try{D=JSON.parse(r.result);save();toast("Backup restored.");render()}catch{toast("Invalid backup file.")}};r.readAsText(e.target.files[0])}function resetD(){if(confirm("Clear all app data?")){localStorage.removeItem(KEY);location.reload()}}
+function render(){setTodayReward();renderHome();renderDaily();renderGoals();renderProgress();renderRewards();renderAnalytics();renderPlanner();renderHabits();renderFocus();renderInsights();renderSettings()}nav();render();if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"));
+
+function loveAnswer(choice){
+  const msg=document.getElementById("gateMessage");
+  if(choice!=="D"){
+    msg.className="gate-wrong show";
+    msg.innerHTML='<span class="anger-face">😠💢</span><b>You are not my Botai. Stay away from her app. 😤</b><br><span style="font-size:12px">Only Infinity ♾️ is the correct answer.</span>';
+    document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+    setTimeout(()=>{document.querySelectorAll(".answer").forEach(b=>b.disabled=false);msg.className="";msg.innerHTML=""},1800);
+    return;
+  }
+  msg.className="gate-right show";
+  msg.innerHTML='<span class="love-face">🥰🩷🫶</span><b>Welcome to my one and only Botai. 🧿❤️‍🩹</b><br><span style="font-size:12px">Come in. Your study world is waiting for you.</span>';
+  document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+  setTimeout(()=>{
+    const gate=document.getElementById("loveGate");
+    gate.style.transition="opacity .65s ease, transform .65s ease";
+    gate.style.opacity="0"; gate.style.transform="scale(1.03)";
+    setTimeout(()=>gate.remove(),650);
+  },1300);
+}
+
+</script></body></html>

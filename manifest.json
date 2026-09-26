@@ -1,0 +1,23 @@
+{
+  "name": "Nanu loves Butu 🧿❤️‍🩹",
+  "short_name": "Nanu ❤️ Butu",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff7fb",
+  "theme_color": "#ff69a8",
+  "description": "Nanu loves Butu — interactive RRB Nursing daily study, focus and growth app",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
